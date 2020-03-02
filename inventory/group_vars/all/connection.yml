@@ -1,0 +1,5 @@
+---
+ansible_ssh_private_key_file: ~/.ssh/test_id_rsa
+ansible_user: cloud-user
+ansible_ssh_common_args: " -o StrictHostKeyChecking=no"
+osp_cloud: ospcloud

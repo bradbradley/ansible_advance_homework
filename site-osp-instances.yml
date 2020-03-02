@@ -1,4 +1,4 @@
 - hosts: workstation
-  become: yes
+  become: no
   roles:
     - osp-servers

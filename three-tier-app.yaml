@@ -1,0 +1,28 @@
+---
+- name: configuration
+  hosts: app1:app2:db:frontend
+  gather_facts: true
+  become: true
+  tasks:
+  - name: Configure Common
+    include_role:
+      name: three_tier_common
+
+  - name: Configure Frontends
+    include_role:
+      name: three_tier_frontend
+    when: "'frontend' in group_names"
+
+  - name: Configure App Servers
+    include_role:
+      name: three_tier_app
+    when: "'app1' in group_names"
+
+  - name: Configure App Servers
+    include_role:
+      name: three_tier_app
+    when: "'app2' in group_names"
+  - name: Configure AppDB Servers
+    include_role:
+      name: three_tier_appdb
+    when: "'db' in group_names"

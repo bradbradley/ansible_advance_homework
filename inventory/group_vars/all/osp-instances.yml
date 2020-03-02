@@ -1,0 +1,36 @@
+osp_instances:
+- name: app1
+  flavor: m1.small
+  image: rhel-guest
+  meta: "group=app1,deployment_name=QA"
+  key_name: ansible_ssh
+  network: int_network
+  floating_ip_network: ext_network
+  security_groups: apps
+
+- name: app2
+  flavor: m1.small
+  image: rhel-guest
+  meta: "group=app1,deployment_name=QA"
+  key_name: ansible_ssh
+  network: int_network
+  floating_ip_network: ext_network
+  security_groups: apps
+
+- name: db
+  flavor: m1.small
+  image: rhel-guest
+  meta: "group=app1,deployment_name=QA"
+  key_name: ansible_ssh
+  network: int_network
+  floating_ip_network: ext_network
+  security_groups: db
+
+- name: frontend
+  flavor: m1.small
+  image: rhel-guest
+  meta: "group=app1,deployment_name=QA"
+  key_name: ansible_ssh
+  network: int_network
+  floating_ip_network: ext_network
+  security_groups: frontend 
