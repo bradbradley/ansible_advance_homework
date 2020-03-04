@@ -16,6 +16,8 @@
   with_subelements:
     - "{{ osp_servers }}"
     - meta
+  tags:
+  - test.servers
 
 
 - name: Create new server instances and attaches them a network and passes metadata to the instance
@@ -39,11 +41,9 @@
   with_subelements:
     - "{{ osp_servers }}"
     - meta
+  tags:
+  - test.servers
 
-- name: OpenStack servers
-  os_server_facts:
-    cloud: ospcloud
-  register: result
 - name: Add floating IP to Servers
   os_floating_ip:
     cloud: ospcloud
@@ -51,11 +51,16 @@
     reuse: yes
     server: "{{ item.value.name }}"
     network: ext_network
-    wait: true
-    timeout: 180
-  register: instancefloatingip
-  with_dict: 
-     "{{ osp_servers }}"
+  with_dict: "{{ osp_servers }}"
+  tags:
+  - test.servers
+
+- name: OpenStack servers
+  os_server_facts:
+    cloud: ospcloud
+  register: result
+  tags:
+    - test.servers
 - name: Wait for server to be available
   wait_for:
     host: "{{ item.public_v4 }}"
@@ -65,3 +70,5 @@
   delegate_to: "{{ inventory_hostname }}"
   with_items:
     - "{{ result.ansible_facts.openstack_servers }}"
+  tags:
+    - test.servers

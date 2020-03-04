@@ -5,7 +5,7 @@
 ###########################################################################
 timeout=60
 ansible_become=yes
-ansible_user=ec2-user
+ansible_user=cloud-user
 
 
 [GenericExample:children]
@@ -37,11 +37,12 @@ ansible_winrm_server_cert_validation=ignore
 ansible_become=false
 
 [frontends]
-frontend.0aa8.internal ansible_ssh_host=frontend.0aa8.example.opentlc.com
+frontend1.0aa8.internal public_host_name=frontend1.0aa8.example.opentlc.com ssh_host=frontend1.0aa8.internal
+#frontend1.0aa8.internal ansible_ssh_host=frontend1.0aa8.example.opentlc.com
 
 [apps]
-app1.0aa8.internal ansible_ssh_host=app1.f974.example.opentlc.com
-app2.0aa8.internal ansible_ssh_host=app2.f974.example.opentlc.com
+app1.0aa8.internal public_host_name=app1.0aa8.example.opentlc.com ssh_host=app1.0aa8.internal
+app2.0aa8.internal public_host_name=app2.0aa8.example.opentlc.com ssh_host=app2.0aa8.internal
 
 [appdbs]
-appdb1.0aa8.internal ansible_ssh_host=appdb1.f974.example.opentlc.com
+appdb1.0aa8.internal public_host_name=appdb1.0aa8.example.opentlc.com ssh_host=appdb1.0aa8.internal
