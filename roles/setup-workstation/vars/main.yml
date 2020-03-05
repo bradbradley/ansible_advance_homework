@@ -7,7 +7,8 @@ osp_networks:
     cloud_name: ospcloud
     network_name: ext_network
     subnet_name: ext_subnet
-    cidr_network: "10.10.10.0/24"
+    cidr_network: "20.20.20.0/24"
+    #cidr_network: "10.10.10.0/24"
     state: present
     external: true
 
@@ -17,7 +18,8 @@ osp_networks:
     cloud_name: ospcloud
     network_name: int_network
     subnet_name: int_subnet
-    cidr_network: "20.20.20.0/24"
+    cidr_network: "10.10.10.0/24"
+    #cidr_network: "20.20.20.0/24"
     state: present
     external: false
 
