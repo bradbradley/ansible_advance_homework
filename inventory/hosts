@@ -13,6 +13,11 @@ workstation-c0af.rhpds.opentlc.com ansible_connection=ssh ansible_ssh_user=bradl
 [awsbastion]
 bastion.0aa8.example.opentlc.com ansible_connection=ssh ansible_ssh_user=bradley-csdef.com ansible_ssh_private_key_file=/root/.ssh/id_rsa
 
+[via_bastion_host]
+apps1               ansible_ssh_host="bastion+apps1"
+apps2               ansible_ssh_host="bastion+apps2"
+appdbs               ansible_ssh_host="bastion+appdbs"
+frontend               ansible_ssh_host="bastion+frontend"
 
 [GenericExample:children]
 towers
