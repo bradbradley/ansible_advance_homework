@@ -1,11 +1,11 @@
-[GenericExample:vars]
+#[GenericExample:vars]
 
 ###########################################################################
 ### Ansible Vars
 ###########################################################################
 #timeout=60
-#ansible_become=yes
-#ansible_user=ec2-user
+ansible_become=yes
+ansible_user=ec2-user
 #
 [workstation]
 workstation-c0af.rhpds.opentlc.com ansible_connection=ssh ansible_ssh_user=bradley-csdef.com ansible_ssh_private_key_file=/root/.ssh/c0afkey.pem
@@ -46,6 +46,7 @@ ansible_become=false
 [frontends]
 #frontend.0aa8.internal ansible_ssh_host=frontend.0aa8.example.opentlc.com
 frontend.0aa8.internal ansible_host=frontend.0aa8.internal
+frontend.0aa8.example.opentlc.com ansible_connection=ssh ansible_ssh_user=cloud-userm ansible_ssh_private_key_file=/root/.ssh/openstack.pem
 
 [apps]
 app1.0aa8.internal ansible_host=app1.0aa8.internal
@@ -56,3 +57,8 @@ app2.0aa8.internal ansible_host=app2.0aa8.internal
 [appdbs]
 #appdb1.0aa8.internal ansible_ssh_host=appdb1.0aa8.example.opentlc.com
 appdb1.0aa8.internal ansible_host=appdb1.0aa8.internal
+
+[build:children]
+frontends
+apps
+appdbs
