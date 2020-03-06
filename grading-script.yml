@@ -3,7 +3,7 @@
   tasks:
   - name: Create In-memory Inventory
     add_host: 
-      name: workstation-{{OSP_GUID}}.rhpds.opentlc.com
+      name: workstation-c0af.rhpds.opentlc.com
       group: workstation
       ansible_ssh_private_key_file: ~/.ssh/openstack.pem
       ansible_ssh_user: cloud-user
