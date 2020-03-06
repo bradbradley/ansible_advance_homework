@@ -44,9 +44,11 @@ def die(message):
     sys.exit(1)
 
 def main():
-    guid = os.environ.get('GUID')
+    #guid = os.environ.get('GUID')
+    guid = ('0aa8')
     if not guid:
         die("Dynamic inventory requires GUID environment variable.")
+        #die("Dynamic inventory requires GUID environment variable.")
     if len(sys.argv) == 2 \
     and sys.argv[1] == '--list':
         print(json.dumps(
