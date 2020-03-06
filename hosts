@@ -42,12 +42,17 @@ ansible_user=Administrator
 ansible_winrm_server_cert_validation=ignore
 ansible_become=false
 
+
 [frontends]
-frontend.0aa8.internal ansible_ssh_host=frontend.0aa8.example.opentlc.com
+#frontend.0aa8.internal ansible_ssh_host=frontend.0aa8.example.opentlc.com
+frontend.0aa8.internal ssh_host=frontend.0aa8.internal
 
 [apps]
-app1.0aa8.internal ansible_ssh_host=app1.0aa8.example.opentlc.com
-app2.0aa8.internal ansible_ssh_host=app2.0aa8.example.opentlc.com
+app1.0aa8.internal ssh_host=app1.0aa8.internal
+app2.0aa8.internal ssh_host=app2.0aa8.internal
+#app1.0aa8.internal ansible_ssh_host=app1.0aa8.example.opentlc.com
+#app2.0aa8.internal ansible_ssh_host=app2.0aa8.example.opentlc.com
 
 [appdbs]
-appdb1.0aa8.internal ansible_ssh_host=appdb1.0aa8.example.opentlc.com
+#appdb1.0aa8.internal ansible_ssh_host=appdb1.0aa8.example.opentlc.com
+appdb1.0aa8.internal ssh_host=appdb1.0aa8.internal
