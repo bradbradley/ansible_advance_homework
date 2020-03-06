@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "hostvars": {
+      "app1": {
+        "ansible_host": "app1.0aa8.internal"
+      }, 
+      "app2": {
+        "ansible_host": "app2.0aa8.internal"
+      }, 
+      "appdb1": {
+        "ansible_host": "appdb1.0aa8.internal"
+      }, 
+      "frontend1": {
+        "ansible_host": "frontend1.0aa8.internal"
+      }
+    }
+  }, 
+  "appdbs": {
+    "hosts": [
+      "appdb1"
+    ]
+  }, 
+  "apps": {
+    "hosts": [
+      "app1", 
+      "app2"
+    ]
+  }, 
+  "frontends": {
+    "hosts": [
+      "frontend1"
+    ]
+  }, 
+  "internal": {
+    "children": [
+      "apps", 
+      "appdbs", 
+      "frontends"
+    ]
+  }
+}
