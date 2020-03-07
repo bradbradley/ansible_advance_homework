@@ -10,11 +10,11 @@
 [workstation]
 workstation-c0af.rhpds.opentlc.com ansible_connection=ssh ansible_ssh_user=bradley-csdef.com ansible_ssh_private_key_file=/root/.ssh/c0afkey.pem
 
-[via_workstation]
-apps1.0aa8.internal               ansible_ssh_host="workstation+apps1.0aa8.internal"
-apps2.0aa8.internal               ansible_ssh_host="workstation+apps2.0aa8.internal"
-appdbs.0aa8.internal               ansible_ssh_host="workstation+appdbs.0aa8.internal"
-frontend.0aa8.internal               ansible_ssh_host=`workstation+frontend.0aa8.internal`
+#[via_workstation]
+#apps1.0aa8.internal               ansible_ssh_host="workstation+apps1.0aa8.internal"
+#apps2.0aa8.internal               ansible_ssh_host="workstation+apps2.0aa8.internal"
+#appdbs.0aa8.internal               ansible_ssh_host="workstation+appdbs.0aa8.internal"
+#frontend.0aa8.internal               ansible_ssh_host=`workstation+frontend.0aa8.internal`
 [awsbastion]
 bastion.0aa8.example.opentlc.com ansible_connection=ssh ansible_ssh_user=bradley-csdef.com ansible_ssh_private_key_file=/root/.ssh/id_rsa
 
@@ -48,16 +48,16 @@ ansible_winrm_server_cert_validation=ignore
 ansible_become=false
 
 
-[frontends]
+#[frontends]
 #frontend.0aa8.internal ansible_ssh_host=frontend.0aa8.example.opentlc.com
-frontend.0aa8.internal ansible_host=frontend.0aa8.internal
+#frontend.0aa8.internal ansible_host=frontend.0aa8.internal
 
-[apps]
-app1.0aa8.internal ansible_host=app1.0aa8.internal
-app2.0aa8.internal ansible_host=app2.0aa8.internal
+#[apps]
+#app1.0aa8.internal ansible_host=app1.0aa8.internal
+#app2.0aa8.internal ansible_host=app2.0aa8.internal
 #app1.0aa8.internal ansible_ssh_host=app1.0aa8.example.opentlc.com
 #app2.0aa8.internal ansible_ssh_host=app2.0aa8.example.opentlc.com
 
-[appdbs]
+#[appdbs]
 #appdb1.0aa8.internal ansible_ssh_host=appdb1.0aa8.example.opentlc.com
-appdb1.0aa8.internal ansible_host=appdb1.0aa8.internal
+#appdb1.0aa8.internal ansible_host=appdb1.0aa8.internal
