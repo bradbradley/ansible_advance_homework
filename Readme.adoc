@@ -1,5 +1,6 @@
 ==== Ansible Tower Config
 
+The Configuration file myfile under the ansible_advance_homework is encrypted with the information below, the decrypt is ansible
 
 * From the cloned repo run `site-config-tower.yml` playbook to create job templates and workflow template.
 
