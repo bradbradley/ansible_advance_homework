@@ -1,38 +1,32 @@
 Role Name
-=========
+This is a base-config role does the below,
 
-A brief description of the role goes here.
-
+    1) enable sudo without tty for some ansible commands
+    2) enable repos
+    3) install base tools and packages
 Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
+Ansible Tower Homework Lab
+OpenStack for Ansible
+Ansible Advanced
+https://github.com/"{{ GIT_ID_NAME }}" /ansible_advance_homework.git
 Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
+1) export TOWER_GUID= 8675309
+2) export MYKEY=~/.ssh/mykey.pem
+3) export MYUSER= myusername (Jenny)
+4) export GIT_ID_NAME (Ricky)
 Dependencies
-------------
+N/A
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
-----------------
-
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
+    - name: enable repos
+      template:
+        src: repos_template.j2
+        dest: /etc/yum.repos.d/open_three-tier-app.repo
+        mode: 0644
 License
--------
-
 BSD
 
-Author Information
-------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
