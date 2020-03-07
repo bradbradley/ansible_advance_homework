@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role does the follow below, 1) Create new server instances and attaches them a network and passes metadata to the instance. 2) Add floating IP to Servers 3) OpenStack servers 4) Wait for server to be available 5)
 
 Requirements
 ------------
