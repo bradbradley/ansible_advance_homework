@@ -1,4 +1,4 @@
-- name: configuration 3 tier app in AWS enviroment for homework Daniel Z
+- name: configuration 3 tier app in AWS enviroment 
   hosts: all
   gather_facts: true
   become: true
