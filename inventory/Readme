@@ -1,4 +1,0 @@
-Added inventory
-The ansible configuration points to it for its host.
-
-Made a lot of changes to get try to get communication from bastion to the workstation
